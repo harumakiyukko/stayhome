@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="links">
-      <h1><img alt="stayhome" src="./assets/art/sakura.jpeg" class="on Twitter"><p><span>みんなの</span>#stayhome</p></h1>
+      <h1><img alt="stayhome" src="./assets/art/0404.png" class="on Twitter"><p><span>みんなの</span>#stayhome</p></h1>
       <div>
         <a class="snsbtn" href="https://twitter.com/search?q=%23stayhome&src=typed_query"><img alt="logo" src="./assets/twitter.png" class="on Twitter"></a>
         <a class="snsbtn size2"  href="https://www.youtube.com/results?search_query=%23stayhome"><img alt="logo" src="./assets/youtube.png" class="on YouTube"></a>
@@ -10,12 +10,12 @@
       </div>
     </div>
 
-    <h1><img alt="stayhome" src="./assets/art/stay.jpeg" class="on Twitter"><p><span>著名人の</span>#stayhome</p></h1>
+    <h1><img alt="stayhome" src="./assets/art/0403.png" class="on Twitter"><p><span>著名人の</span>#stayhome</p></h1>
     <HelloWorld msg="Welcome to stayhome.fmw-harumaki.jp"/>
 
 
     <div class="logobox">
-      <img alt="logo" src="./assets/art/sleep.jpeg" class="logo">
+      <img alt="logo" src="./assets/art/0331.png" class="logo">
       <div class="logotext">
         <h2>#stayhome のために、癒しになるようなSNS投稿を集めています。</h2>
         <p>偏りなく集めていきたいと思いますが、気づいたことがあれば<a href="https://twitter.com/harumakiyukko">twitter</a>までご連絡下さい。<br>
@@ -92,10 +92,11 @@ h1 {
   justify-content: center;
   font-family: 'Courgette', cursive;
   flex-wrap: wrap;
+  text-shadow: 1px 1px 1px yellow;
 }
 h1 img {
   width: 200px;
-  margin: 10px;
+  margin: 0;
 }
 h1 span {
   font-size: 1.2rem;
