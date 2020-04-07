@@ -1,58 +1,83 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+  <div class="allbox">
+    <div class="item" v-for="(ss, index) in sources" :key="index">
+      <youtube v-if="ss.from == 'youtube'" :video-id="ss.id" class="youtubebox" player-width="100%" player-height="100%"></youtube>
+      <Tweet v-if="ss.from == 'twitter'" :id="ss.id" class="twitterbox"><div class="spinner"></div></Tweet>
+    </div>
   </div>
 </template>
 
 <script>
+    import { Tweet } from 'vue-tweet-embed'
+
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+    data() {
+        return {
+            sources : [
+                { from: 'youtube', id: 'mKmFLZhfDtE'},
+                { from: 'twitter', id: '1247105206023680000'},
+                { from: 'twitter', id: '1247117149287538688'},
+                { from: 'twitter', id: '1247118159095541760'},
+                { from: 'youtube', id: 'jSM0h8VPSZk'},
+                { from: 'twitter', id: '1247011149758922753'},
+                { from: 'youtube', id: '3OO5zq1PBIM'},
+                { from: 'youtube', id: '8kqvXDLl6O0'},
+                { from: 'youtube', id: 'ELhCZI8V2KQ'},
+                { from: 'youtube', id: 'b4DeMn_TtF4'},
+                { from: 'twitter', id: '1246967272075218944'},
+                { from: 'twitter', id: '1247006212673032192'},
+                { from: 'twitter', id: '1246047171134107648'},
+            ]
+        }
+    },
+    components: {
+      Tweet
+    }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.youtubebox {
+  border: solid 1px #FFF;
+  background: #FFF;
+  padding: 10px;
+  border-radius: 1%;
+  margin: 0 10px 10px;
+  width: 300px;
+  height: 200px;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.twitterbox {
+  margin: 0 10px 10px;
+  width: 320px;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+.allbox {
+  width: 90%;
+  max-width: 1380px;
+  margin: auto;
+  column-count: 4;
+  column-gap: 0;
 }
-a {
-  color: #42b983;
+@media (max-width: 900px) {
+  .allbox {
+    width: 680px;
+    margin: auto;
+    column-count: 2;
+  }
+}
+
+@media (max-width: 680px) {
+  .allbox {
+    width: 340px;
+    margin: auto;
+    column-count: 1;
+  }
 }
 </style>
