@@ -19,10 +19,14 @@
       <div class="logotext">
         <h2>#stayhome のために、癒しになるようなSNS投稿を集めています。</h2>
         <p>偏りなく集めていきたいと思いますが、気づいたことがあれば<a href="https://twitter.com/harumakiyukko">twitter</a>までご連絡下さい。<br>
-          共同編集は<a href="https://github.com/harumakiyukko/stayhome">github</a>とgoogleスプレッドシート（準備中）でやりたいと思いますので、一緒に取り組んでくださる方からのご連絡もお待ちしております。</p>
+          共同編集は<a href="https://github.com/harumakiyukko/stayhome">github</a>と
+          <a href="https://docs.google.com/spreadsheets/d/1_k__CMAdsbh_Ghc2s2bwbN-IKKTQq8FlAexaLLCIa2Q/edit?usp=sharing">googleスプレッドシート</a>
+          でやっています。<br>
+          一緒に取り組んでくださる方はぜひご連絡ください。</p>
         <p>
           thank you all !<br>
           art work : <a href="https://twitter.com/Hashi_ko845">@Hashi_ko845</a><br>
+          preloader : <a href="https://dribbble.com/shots/1379948-Morph-Shape-Preloader-GIF">dribbble by Mantas Bačiuška</a><br>
           vue-youtube-embed : <a href="https://github.com/kaorun343/vue-youtube-embed">@kaorun343</a><br>
           vue-tweet-embed : <a href="https://github.com/tonickkozlov/vue-tweet-embed">@tonickkozlov</a><br>
           and Vue and npm and yarn and you!

@@ -1,38 +1,48 @@
 <template>
-  <div class="allbox">
-    <div class="item" v-for="(ss, index) in sources" :key="index">
-      <youtube v-if="ss.from == 'youtube'" :video-id="ss.id" class="youtubebox" player-width="100%" player-height="100%"></youtube>
-      <Tweet v-if="ss.from == 'twitter'" :id="ss.id" class="twitterbox"><div class="spinner"></div></Tweet>
+  <div>
+    <div v-if="isFetching" class="loading"><img src="../assets/preloader.gif"></div>
+    <div class="allbox">
+      <div class="item" v-for="(ss, index) in sources" :key="index">
+        <youtube v-if="ss.from == 'youtube'" :video-id="ss.id" class="youtubebox" player-width="100%" player-height="100%"></youtube>
+        <Tweet v-if="ss.from == 'twitter'" :id="ss.id" class="twitterbox"><div class="spinner"></div></Tweet>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
     import { Tweet } from 'vue-tweet-embed'
+    import axios from 'axios'
+
 
 export default {
   name: 'HelloWorld',
     data() {
         return {
-            sources : [
-                { from: 'youtube', id: 'mKmFLZhfDtE'},
-                { from: 'twitter', id: '1247105206023680000'},
-                { from: 'twitter', id: '1247117149287538688'},
-                { from: 'twitter', id: '1247118159095541760'},
-                { from: 'youtube', id: 'jSM0h8VPSZk'},
-                { from: 'twitter', id: '1247011149758922753'},
-                { from: 'youtube', id: '3OO5zq1PBIM'},
-                { from: 'youtube', id: '8kqvXDLl6O0'},
-                { from: 'youtube', id: 'ELhCZI8V2KQ'},
-                { from: 'youtube', id: 'b4DeMn_TtF4'},
-                { from: 'twitter', id: '1246967272075218944'},
-                { from: 'twitter', id: '1247006212673032192'},
-                { from: 'twitter', id: '1246047171134107648'},
-            ]
+            sources : [],
+            isFetching : true,
         }
     },
     components: {
       Tweet
+    },
+    mounted: function () {
+        this.getSources()
+    },
+    methods: {
+      getSources: function () {
+          axios.get(`https://script.googleusercontent.com/macros/echo?user_content_key=wbhREdoco-BwUjuDF4fnCbqUD3fO_T7CABOuKOfNpUKWhVoKq48m7VfeMKD6SK2kVZwy37d8H6YVt4-wQcvO5jx7MJuLdJK2m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnLYAU3DiAHu-kijvB0iw7VMPtjNjxkBdtCKuHaI9BvaQl8PymMaPVAyhRYnzsJfjjOQAcA3IDdi1&lib=MkHnTebKaGAHmnjCG0nw6NybqL8bBmoa-`)
+              .then(({ data }) => {
+              this.sources = data
+      })
+          .catch((error) => {
+              this.data = []
+          throw error
+      })
+          .finally(() => {
+              this.isFetching = false
+      })
+      }
     }
 }
 </script>
@@ -79,5 +89,9 @@ export default {
     margin: auto;
     column-count: 1;
   }
+}
+.loading {
+  margin: auto;
+  text-align: center;
 }
 </style>
