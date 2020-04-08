@@ -36,6 +36,12 @@
         </p>
       </div>
     </div>
+
+    <transition>
+      <div v-show="scY > 300" @click="toTop" class="btn_back_box">
+        <img src="./assets/arrow.svg" class="btn_back" @click="toTop" >
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -46,7 +52,39 @@ export default {
   name: 'App',
   components: {
     Posts
-  }
+  },
+    data() {
+        return {
+            scTimer: 0,
+            scY: 0,
+        }
+    },
+    mounted: function () {
+        window.addEventListener("scroll", this.scEvent)
+    },
+    destroyed: function () {
+        window.addEventListener("scroll", this.scEvent)
+    },
+    methods: {
+        toTop() {
+            var scrolled = window.pageYOffset;
+            window.scrollTo(0, Math.floor(scrolled * 0.8));
+            if (scrolled > 0) {
+                window.setTimeout(this.toTop, 10);
+            }
+        },
+        scEvent() {
+            if (this.scTimer) return;
+            this.scTimer = setTimeout(() => {
+
+                this.scY = window.scrollY;
+
+            clearTimeout(this.scTimer);
+            this.scTimer = 0;
+
+        }, 100);
+        }
+    }
 }
 </script>
 
@@ -95,7 +133,7 @@ h1 {
   justify-content: center;
   font-family: 'Courgette', cursive;
   flex-wrap: wrap;
-  text-shadow: 1px 1px 1px yellow;
+  text-shadow: 1px 1px 1px #f4ecde;
 }
 h1 img {
   width: 160px;
@@ -124,4 +162,36 @@ h1 p {
   height: 40px;
   margin: 10px 0;
 }
+  .btn_back_box {
+    position: fixed;
+    bottom: 10vh;
+    right: 5%;
+    width: 80px;
+    height: 80px;
+    z-index: 10000;
+    transition-duration: 0.2s;
+    transition: all 0.6s;
+  }
+  .btn_back_box .btn_back {
+    filter: drop-shadow(0px 1px 3px #f6f5ea);
+  }
+  .btn_back_box:hover {
+     bottom: 8vh;
+   }
+
+  .btn_back_box.v-enter,
+  .btn_back_box.v-leave-to {
+     opacity: 0;
+     bottom: 10px;
+   }
+  @media screen and (max-width: 680px) {
+    .btn_back_box {
+      position: relative;
+      bottom: 60px;
+      right: 0;
+      width: 60px;
+      height: 60px;
+      margin: auto;
+    }
+  }
 </style>
