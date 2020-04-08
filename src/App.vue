@@ -164,7 +164,7 @@ h1 p {
 }
   .btn_back_box {
     position: fixed;
-    bottom: 10vh;
+    bottom: 7vh;
     right: 5%;
     width: 80px;
     height: 80px;
