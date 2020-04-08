@@ -8,6 +8,8 @@
         <a class="snsbtn size2"  href="https://vimeo.com/search?q=stayhome"><img alt="logo" src="./assets/vimeo.png" class="on vimeo"></a>
         <a class="snsbtn"  href="https://www.instagram.com/explore/tags/stayhome/"><img alt="logo" src="./assets/instagram.png" class="on Instagram"></a>
         <a class="snsbtn size3" href="https://www.pinterest.jp/search/pins/?q=stayhome"><img alt="logo" src="./assets/pinterest.svg" class="on Pinterest"></a>
+        <a class="snsbtn size3" href="https://www.tiktok.com/tag/%E5%AE%B6%E3%81%AB%E3%81%84%E3%82%8B%E3%81%A0%E3%81%91%E3%81%A7%E4%B8%96%E7%95%8C%E3%81%AF%E6%95%91%E3%81%88%E3%82%8B?lang=ja"><img alt="logo" src="./assets/tiktok.svg" class="on tiktok"></a>
+        <a class="snsbtn size3" href="https://www.google.com/doodles/stay-home-save-lives"><img alt="logo" src="./assets/google.svg" class="on google"></a>
       </div>
     </div>
 
