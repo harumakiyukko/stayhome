@@ -12,7 +12,7 @@
     </div>
 
     <h1><img alt="stayhome" src="./assets/art/0403.png" class="on Twitter"><p><span>著名人の</span>#stayhome</p></h1>
-    <HelloWorld msg="Welcome to stayhome.fmw-harumaki.jp"/>
+    <Posts msg="Welcome to stayhome.fmw-harumaki.jp"/>
 
 
     <div class="logobox">
@@ -38,12 +38,12 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Posts from './components/Posts.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Posts
   }
 }
 </script>
@@ -96,13 +96,17 @@ h1 {
   text-shadow: 1px 1px 1px yellow;
 }
 h1 img {
-  width: 180px;
+  width: 160px;
   margin: 0;
 }
 h1 span {
   font-size: 1.2rem;
   line-height: 1.6rem;
   display: block;
+}
+h1 p {
+  position: relative;
+  left: -.5rem;
 }
 .snsbtn {
   margin: 0 20px;

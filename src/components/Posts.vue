@@ -16,7 +16,7 @@
 
 
 export default {
-  name: 'HelloWorld',
+  name: 'Posts',
     data() {
         return {
             sources : [],
