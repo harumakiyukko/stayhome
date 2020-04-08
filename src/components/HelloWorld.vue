@@ -33,7 +33,7 @@ export default {
       getSources: function () {
           axios.get(`https://script.googleusercontent.com/macros/echo?user_content_key=wbhREdoco-BwUjuDF4fnCbqUD3fO_T7CABOuKOfNpUKWhVoKq48m7VfeMKD6SK2kVZwy37d8H6YVt4-wQcvO5jx7MJuLdJK2m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnLYAU3DiAHu-kijvB0iw7VMPtjNjxkBdtCKuHaI9BvaQl8PymMaPVAyhRYnzsJfjjOQAcA3IDdi1&lib=MkHnTebKaGAHmnjCG0nw6NybqL8bBmoa-`)
               .then(({ data }) => {
-              this.sources = data
+              this.sources = data.slice().reverse()
       })
           .catch((error) => {
               this.data = []
@@ -69,11 +69,18 @@ export default {
   break-inside: avoid;
 }
 .allbox {
-  width: 90%;
+  width: 99%;
   max-width: 1380px;
   margin: auto;
   column-count: 4;
   column-gap: 0;
+}
+@media (max-width: 1300px) {
+  .allbox {
+    width: 1100px;
+    margin: auto;
+    column-count: 3;
+  }
 }
 @media (max-width: 900px) {
   .allbox {
@@ -82,7 +89,6 @@ export default {
     column-count: 2;
   }
 }
-
 @media (max-width: 680px) {
   .allbox {
     width: 340px;

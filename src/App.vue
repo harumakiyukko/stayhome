@@ -7,6 +7,7 @@
         <a class="snsbtn size2"  href="https://www.youtube.com/results?search_query=%23stayhome"><img alt="logo" src="./assets/youtube.png" class="on YouTube"></a>
         <a class="snsbtn size2"  href="https://vimeo.com/search?q=stayhome"><img alt="logo" src="./assets/vimeo.png" class="on vimeo"></a>
         <a class="snsbtn"  href="https://www.instagram.com/explore/tags/stayhome/"><img alt="logo" src="./assets/instagram.png" class="on Instagram"></a>
+        <a class="snsbtn size3" href="https://www.pinterest.jp/search/pins/?q=stayhome"><img alt="logo" src="./assets/pinterest.svg" class="on Pinterest"></a>
       </div>
     </div>
 
@@ -95,7 +96,7 @@ h1 {
   text-shadow: 1px 1px 1px yellow;
 }
 h1 img {
-  width: 200px;
+  width: 180px;
   margin: 0;
 }
 h1 span {
@@ -112,5 +113,9 @@ h1 span {
 .snsbtn.size2 img {
   height: 30px;
   margin: 15px 0;
+}
+.snsbtn.size3 img {
+  height: 40px;
+  margin: 10px 0;
 }
 </style>
