@@ -1,7 +1,8 @@
 <template>
   <div>
     <div v-if="isFetching" class="loading"><img src="../assets/preloader.gif"></div>
-    <div class="allbox">
+
+    <div id="allbox">
       <div class="item" v-for="(ss, index) in sources" :key="index">
         <youtube v-if="ss.from == 'youtube'" :video-id="ss.id" class="youtubebox" player-width="100%" player-height="100%"></youtube>
         <Tweet v-if="ss.from == 'twitter'" :id="ss.id" class="twitterbox"><div class="spinner"></div></Tweet>
@@ -13,7 +14,6 @@
 <script>
     import { Tweet } from 'vue-tweet-embed'
     import axios from 'axios'
-
 
 export default {
   name: 'Posts',
@@ -68,32 +68,33 @@ export default {
   page-break-inside: avoid;
   break-inside: avoid;
 }
-.allbox {
+#allbox {
   width: 99%;
   max-width: 1380px;
   margin: auto;
-  column-count: 4;
-  column-gap: 0;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-wrap: wrap;
 }
 @media (max-width: 1300px) {
-  .allbox {
+  #allbox {
     width: 1100px;
     margin: auto;
-    column-count: 3;
   }
 }
 @media (max-width: 900px) {
-  .allbox {
+  #allbox {
     width: 680px;
     margin: auto;
-    column-count: 2;
   }
 }
 @media (max-width: 680px) {
-  .allbox {
+  #allbox {
     width: 340px;
     margin: auto;
-    column-count: 1;
   }
 }
 .loading {

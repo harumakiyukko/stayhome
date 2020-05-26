@@ -4290,6 +4290,10 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
+macy@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/macy/-/macy-2.5.1.tgz#0dcd4643944809585ccc8f5ff07fb8705d98d7db"
+
 make-dir@^2.0.0:
   version "2.1.0"
   resolved "https://registry.npm.taobao.org/make-dir/download/make-dir-2.1.0.tgz#5f0310e18b8be898cc07009295a30ae41e91e6f5"
@@ -6871,6 +6875,10 @@ vue-loader@^15.9.1:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-masonry-gallery@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/vue-masonry-gallery/-/vue-masonry-gallery-1.1.1.tgz#39bb69212e697995cf378291238e55334e9932f4"
 
 vue-masonry@^0.11.8:
   version "0.11.8"
